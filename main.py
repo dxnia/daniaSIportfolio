@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+from google.appengine.api import users
 import webapp2
 import os
 import logging
@@ -26,9 +27,22 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 class IndexHandler(webapp2.RequestHandler):
+
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/index.html')
-        self.response.write(template.render({'title': 'HOME'}))
+        # self.response.write(template.render({'there': 'HOME'}))
+         # Checks for active Google account session
+        user = users.get_current_user()
+
+        if user:
+            nick = user.nickname() 
+            nick = nick.split('@')[0]
+            self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+            self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout'}))
+            self.response.write('Hello, ' + nick)
+        else:
+            self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login'}))
+            # self.response.write(template.render({'there': 'hello'})
 
 # class FamilyHandler(webapp2.RequestHandler):
 #     def get(self):

@@ -1,5 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
-@import url("font-awesome.min.css");
+@import url("images/font-awesome.min.css");
 
 /*
 	Astral by HTML5 UP
@@ -1197,8 +1197,9 @@ body.woah{
 		/*background-image: url("images/overlay.png"), url("images/bg.jpg");*/
 
 	/*background-image: url("images/pic04.png"), url("images/bg.jpg");*/
-    background-color: #dfa8a8;
+    /*background-color: #dfa8a8;*/
     /*background-color: #cebcbc;*/
+    background-color: white;
 	-moz-transition-duration:1s;
     -webkit-transition-duration:1s;
     -o-transition-duration:1s;
@@ -1422,10 +1423,10 @@ visibility: hidden;
 			}
 
 			
-			.destroy { 
+			/*.destroy { 
 				visibility: hidden;
 				      
-			}
+			}*/
 			.takeaway{ 
 				visibility: hidden;
 			}
@@ -1576,7 +1577,7 @@ visibility: hidden;
 
 		/* Table */
 
-			table.style1 {
+			.style1 {
 				overflow-x: scroll;
 			}
 
