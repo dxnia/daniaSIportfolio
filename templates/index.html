@@ -1,0 +1,56 @@
+{% extends "templates/base.html" %}
+{% block content %} 
+ <!--    <div id="wrapper" class="destroy"> -->
+
+                <!-- Nav -->
+                    <!-- <div id="title">
+                        <a href="#me" class="icon fa-home active"><span>Home</span></a>
+                        <a href="#work" class="icon fa-folder"><span>Work</span></a>
+                        <a href="#contact" class="icon fa-envelope"><span>Contact</span></a>
+                        <a href="#" class="icon fa-twitter"><span>Twitter</span></a>
+                    </div> -->
+                <!-- Main -->
+                    <!-- <div id="main" > -->
+
+                        <!-- Me -->
+                          <!--   <article id="me" class="panel"> <br><br><br>
+                                <header> -->
+                                    <!-- <h1>Dania Abdulhamid</h1> -->
+                             <!--        <p>Aspiring Product Manager</p>
+                                </header>
+                                <a href="templates/work.html" class="jumplink pic">
+                                    <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+                                    <img src="static/images/dania3.jpg" alt="dania's photo" />
+                                </a>
+
+                            </article>-->
+
+
+            <div class = "destroy" id = "sector" class="text-center"> 
+                <img src="static/images/dania3.jpg" alt="dania's photo"/>
+                
+                <header id="moreinfo">
+                    <br>
+                    <h1>Welcome</h1>
+                    <br>
+                    <h3>My name is Dania Abdulhamid (dan-ya ab-dull-huh-meed).<br> I study computer science + information!</h3>
+                </header> 
+                <div id = "cheer"> 
+
+                </div> 
+
+            </div> 
+
+                    </div> 
+                    <div class = "hide"> </div>
+<script type="text/javascript"> 
+function clickFunc() { 
+                var listed = document.getElementsByTagName("h1")[0].innerHTML;
+                document.getElementsByTagName("h1")[0].innerHTML = "Welcome!"; 
+                document.getElementsByTagName("h3")[0].innerHTML = "My name is Dania Abdulhamid (dan-ya ab-dull-huh-meed).<br> I study computer science + information!"; 
+
+            }
+</script>
+
+
+{%endblock%}

@@ -1,0 +1,155 @@
+#main { 
+    
+    top: -5em;
+        background-color: #dfa8a8;
+
+
+}
+body { 
+    /*background-color: #dfa8a8;*/
+    background-color: #cebcbc;
+     -moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;
+
+}
+#mee #main { 
+    
+        background-color: #cebcbc;
+          -moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;
+
+}
+
+#nav { 
+        font-size: .7em;    
+        top: 20em;
+        letter-spacing: 4em;
+        font-weight: lighter;
+        background-color: 
+
+
+}
+/*.panel { 
+  -moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;
+    background: transparent;
+}
+
+#sector{ 
+
+
+    -moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;
+}
+*/
+#nav{
+
+    font-family: 'Raleway', sans-serif;
+}
+#sector img{ 
+
+    border-radius: 50%;
+    margin-top: 8em;
+    content: center;
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*display: table-row;*/
+   height: 45%;
+    width: 45%;
+}
+#sector{ 
+    /*display: table; */
+    /*position: relative;*/
+    /*position: 50%; */
+    top: 12em;
+
+
+
+}
+#nav h2 { 
+
+    font-size:15px;
+    letter-spacing: 3px;
+    font-style: bold; 
+   opacity:1;
+ font-family: 'Raleway', sans-serif;
+    position:fixed;
+    text-transform:uppercase;
+   text-align:center;
+   width:100%;
+  /* bottom:400px;*/
+ text-align:center;
+    color: #F1D5D4;
+    font-style: .2em;
+ 
+  /*padding-top:40px;
+  padding-bottom:40px;*/
+ 
+    z-index:98989898989898989999;
+
+}
+.destroy { 
+    visibility: hidden;
+    /*-moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;*/
+
+}
+#nav.woah {
+
+    
+
+    top: 45em;
+    font-size: .7em;
+    line-height: .7em;
+    padding-top: 1%;
+    font-family: 'Source Sans Pro', sans-serif;
+    bottom:-1em;
+    opacity: 1;
+    /*background-image: url("images/bg.jpg");*/
+/*    background-color: #dfa8a8;
+*/    /*display: table-row;*/
+     -moz-transition-duration:1s;
+    -webkit-transition-duration:1s;
+    -o-transition-duration:1s;
+}
+
+#main{ 
+    
+    top: 5em; 
+
+}
+
+.hide{ 
+    height: 50em;
+
+}
+
+.disappear{ 
+    visibility: hidden;
+}
+
+h3{ 
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    content: center;
+    text-align: center;
+
+
+}
+#moreinfo h1 { 
+margin-left: auto;
+    margin-right: auto;
+    content: center;
+    text-align: center;
+}
+#moreinfo { 
+    background-image: url("images/pic04.png")
+}
