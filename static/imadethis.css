@@ -18,6 +18,7 @@ body {
 
 #nav a { 
     letter-spacing: 0px;
+    left: -2.5%;
 
 }
 #mee #main { 
@@ -190,7 +191,9 @@ opacity: .5;
 }
 
 @media screen and (min-width: 737px) { 
-
+#gone { 
+    visibility: hidden;
+}
 #moreinfo h1 { 
     letter-spacing: 2px;
     font-family: 'Aguafina Script', cursive;
@@ -361,10 +364,20 @@ position: fixed;
 #clickin { 
 
     text-decoration: none;
-    font-size: .2px;
+    font-size: .11px;
     letter-spacing: .3px;
     font-weight: lighter;
     text-transform: lowercase;
     
 
 }
+
+#work h1 { 
+
+    font-family: 'Aguafina Script', cursive;
+
+}
+
+
+
+

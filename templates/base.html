@@ -14,15 +14,7 @@
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         
         <!-- `<header > <h1 class="beforescroll" > D A N I A A B D U L H A M I D<h1></header> -->
-        // <script > 
-        //         function onSignIn(googleUser) {
-        //           var profile = googleUser.getBasicProfile();
-        //           console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        //           console.log('Name: ' + profile.getName());
-        //           console.log('Image URL: ' + profile.getImageUrl());
-        //           console.log('Email: ' + profile.getEmail());
-        //         }
-        //     </script> 
+       
     </head>
     <body>
 
@@ -37,9 +29,11 @@
     </div>
     </div> -->
     <nav  id="nav" >
-                        <a href="templates/index.html" class="icon fa-home active"><span>Home</span></a>
-                        <a href="templates/work.html" class="icon fa-folder"><span>Work</span></a>
-                        <a href="templates/contact.html" class="icon fa-envelope"><span>Contact</span></a>
+                        
+                        <a href="index.html" class="icon fa-home active"><span>Home</span></a>
+                        <a href="other.html" class="icon fa-home "><span>Home</span></a>
+                        <a href="work.html" class="icon fa-folder"><span>Work</span></a>
+                        <a href="contact.html" class="icon fa-envelope"><span>Contact</span></a>
                         <a id="clickin" href = "{{loginbutton}}">{{loginorout}}</a> </span></a><br>
                         <header> <h2>D A N I A / A B D U L H A M I D</h2></header><br>
 
@@ -123,6 +117,7 @@
                         $("#main").removeClass("woah");
                         $('#nav').addClass("woah");
                         $('div').removeClass("destroy");
+                        $('.prettywrapper').attr("gone"); 
 
                         // scrolled = true; 
                     }
@@ -131,6 +126,8 @@
                             $('#nav').removeClass("woah");
                             $('#main').addClass("woah"); 
                             $('div').addClass("destroy");
+                            $('.prettywrapper').removeAttr("gone");
+
 
                         // } 
                     }

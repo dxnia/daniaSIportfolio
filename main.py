@@ -36,17 +36,18 @@ class IndexHandler(webapp2.RequestHandler):
 
         if user:
             nick = user.nickname() 
+            nick = nick[:8]
             nick = nick.split('@')[0]
             self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
             self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout'}))
-            self.response.write('Hello, ' + nick)
+            # self.response.write('Hello, ' + nick)
         else:
             self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login'}))
             # self.response.write(template.render({'there': 'hello'})
 
-# class FamilyHandler(webapp2.RequestHandler):
+# class WorkHandler(webapp2.RequestHandler):
 #     def get(self):
-#         template = JINJA_ENVIRONMENT.get_template('templates/family.html')
+#         template = JINJA_ENVIRONMENT.get_template('templates/work.html')
 #         self.response.write(template.render())
 
 
@@ -55,10 +56,28 @@ class IndexHandler(webapp2.RequestHandler):
 #         template = JINJA_ENVIRONMENT.get_template('templates/food.html')
 #         self.response.write(template.render())
 
+class FoodHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('templates/work.html')
+        #self.response.write(template.render())
+
+        user = users.get_current_user()
+
+        if user:
+            nick = user.nickname() 
+            nick = nick[:8]
+            nick = nick.split('@')[0]
+            self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+            self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout'}))
+            # self.response.write('Hello, ' + nick)
+        else:
+            self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login'}))
+
 
 app = webapp2.WSGIApplication([
+    ('/index.html', IndexHandler),
     ('/', IndexHandler),
-    # ('/index.html', IndexHandler),
+    ('/work.html', FoodHandler)
     # ('/family.html', FamilyHandler),
     # ('/food.html', FoodHandler)
 ], debug=True)
