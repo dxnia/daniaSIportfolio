@@ -342,7 +342,7 @@ position: fixed;
 #nav.woah {
 
     background-color: gray;
-    opacity: .7;    
+    opacity: .88;    
 
     top: 90%;
     font-size: .7em;
@@ -394,10 +394,17 @@ position: fixed;
         font-size: 7em;
         
     }
+    #work h3 { 
+
+        font-size: 2.2em;
+
+    }
+
+    
 
 } 
 #work h1 { 
-    opacity: .3;
+    /*opacity: .3;*/
     display: inline;
     font-size: 8em;
     font-family: 'Source Sans Pro', sans-serif;
@@ -415,6 +422,56 @@ position: fixed;
 }
 
 .image:hover  {
-    opacity: .3;
+
+    opacity: 0;
+    -moz-transition-duration:.5s;
+    -webkit-transition-duration:.5s;
+    -o-transition-duration:.5s;
+
+
+}
+
+
+.wwrapper:hover  img{
+  -moz-transition-duration:.5s;
+    -webkit-transition-duration:.5s;
+    -o-transition-duration:.5s;
+
+    opacity: 0;
     
+
+
+}
+
+.wwrapper .text {
+position:relative;
+top: -16em;
+visibility:hidden;
+}
+.wwrapper p { 
+color: black;
+
+}
+
+.wwrapper:hover .text {
+    -moz-transition-duration:.5s;
+    -webkit-transition-duration:.5s;
+    -o-transition-duration:.5s;
+visibility:visible;
+
+}
+
+#lightup { 
+    color: red;
+    opacity: 1;
+
+
+}
+#contactt header { 
+
+background: #FC354C; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #FC354C , #0ABFBC); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #FC354C , #0ABFBC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+
 }

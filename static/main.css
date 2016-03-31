@@ -953,7 +953,7 @@
 				margin: 0 auto;
 				width: auto;
 			}
-        
+
 
 /* Button */
 
@@ -1050,6 +1050,9 @@
 		position: relative;
 		text-decoration: none;
 	}
+    #lightup.icon  { 
+        opacity: 1;
+    }
 
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
