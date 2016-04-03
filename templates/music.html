@@ -11,7 +11,10 @@
 
     <h3>Type in a # number 0-19 to see which Elvis album you are!</h3><br>
     <form id="search-form" method = "POST">
+              <label for="query">pick a number</label>
+
         <input type="text" id="query" name="artistneeded" value="0" class="form-control" />
+
         <input type="submit" id="search" class="btn btn-primary" value="Search"  onclick = "displayInformation();"/>
     </form>
     <div> <p id="results"></p></div>
