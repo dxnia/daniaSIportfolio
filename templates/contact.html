@@ -1,15 +1,18 @@
                     {% extends "templates/base.html" %}
 {% block content %} 
-<center> 
+
+<!-- <center>  -->
+
             <div class = "destroy" id = "sector"> 
 
                 <div class = "middle"> 
-                                <header id = "work" class="contact" >
+                                <header id = "work" class="contact">
                                     <h1> hello</h1> <h2>{{there}}</h2><br><br>
                                     <h3>Contact Me</h3>
                                 </header>
-                                <form action="#" method="post">
-                                    <div>
+                                <form action="https://formspree.io/dania@umich.edu" method="post">
+                                    <input type="hidden" name="_next" value="success.html" />
+                                    <div><br>
                                         <div class="row">
                                             <div class="6u 12u$(mobile)">
                                                 <input type="text" name="name" placeholder="Name" />
@@ -33,7 +36,7 @@
 
                                  <div class = "byee"> <p class="text">“Our comforting conviction that the world makes sense rests on a secure foundation: our almost unlimited ability to ignore our ignorance.”</p></div> 
                    </div>
-                    </center> 
+                    <!-- </center>  -->
 
                        
 

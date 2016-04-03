@@ -76,6 +76,36 @@ class FoodHandler(webapp2.RequestHandler):
             # self.response.write('Hello, ' + nick)
         else:
             self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
+class SuccessHandler(webapp2.RequestHandler):
+    def get(self):
+        template = JINJA_ENVIRONMENT.get_template('templates/success.html')
+        #self.response.write(template.render())
+        template_name = self.request.path
+        logging.info('opening ' + template_name)
+        user = users.get_current_user()
+        if user:
+            nick = user.nickname() 
+            nick = nick[:8]
+            nick = nick.split('@')[0]
+            self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+            self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout', 'current_path': template_name}))
+            # self.response.write('Hello, ' + nick)
+        else:
+            self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
+    def post(self): 
+        template_name = self.request.path
+        user = users.get_current_user()
+        template = JINJA_ENVIRONMENT.get_template('templates/success.html')
+
+        if user:
+            nick = user.nickname() 
+            nick = nick[:8]
+            nick = nick.split('@')[0]
+            self.response.headers['Content-Type'] = 'text/html; charset=utf-8'
+            self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout', 'current_path': template_name}))
+            # self.response.write('Hello, ' + nick)
+        else:
+            self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
 class ContactHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/contact.html')
@@ -105,7 +135,8 @@ class ContactHandler(webapp2.RequestHandler):
             self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout', 'current_path': template_name}))
             # self.response.write('Hello, ' + nick)
         else:
-            self.response.write(template.render({'there': nick, 'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
+            self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
+
 class MusicHandler(webapp2.RequestHandler):
     # def __init__(self, artist, artist_id):
     #     #initialize class variables:
@@ -126,7 +157,7 @@ class MusicHandler(webapp2.RequestHandler):
             self.response.write(template.render({'there': nick, 'loginbutton': users.create_logout_url('/'), 'loginorout': 'logout', 'current_path': template_name}))
             # self.response.write('Hello, ' + nick)
         else:
-            self.response.write(template.render({'there': nick, 'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
+            self.response.write(template.render({'loginbutton': users.create_login_url('/'), 'loginorout': 'login', 'current_path': template_name}))
 
 
         # template = JINJA_ENVIRONMENT.get_template('templates/music.html')
@@ -150,6 +181,7 @@ app = webapp2.WSGIApplication([
     ('/', IndexHandler),
     ('/work.html', FoodHandler), 
     ('/contact.html', ContactHandler), 
+    ('/success.html', SuccessHandler),
     ('/music.html', MusicHandler)
     # ('/family.html', FamilyHandler),
     # ('/food.html', FoodHandler)

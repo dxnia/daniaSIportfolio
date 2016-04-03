@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Astral by HTML5 UP</title>
+        <title> cout << dxnia; </title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -11,6 +11,7 @@
         <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
  <link rel="stylesheet" href="static/imadethis.css" />
  <link href='https://fonts.googleapis.com/css?family=Aguafina+Script' rel='stylesheet' type='text/css'>
+ <link href="static/favicon.ico" rel="icon" type="image/x-icon" />
         <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         
         <!-- `<header > <h1 class="beforescroll" > D A N I A A B D U L H A M I D<h1></header> -->
@@ -47,7 +48,7 @@
                         {% else %}
                              <a href="music.html" class="icon fa-music"><span>Music</span></a>
                         {% endif %}
-                        {% if current_path == '/contact.html' %}
+                        {% if current_path == '/contact.html' or current_path == '/success.html' %}
                         <a href="contact.html" class="icon fa-envelope" id="lightup"><span>Contact</span></a>
                         {% else %}
                              <a href="contact.html" class="icon fa-envelope"><span>Contact</span></a>
@@ -74,7 +75,6 @@
     
 
     <!-- Scripts -->
-            <script src="https://apis.google.com/js/platform.js" async defer></script>
 
             <script src="static/js/jquery.min.js"></script>
             <script src="static/js/skel.min.js"></script>
@@ -88,15 +88,17 @@
                 $(document).ready(function(){
                     $(window).scroll(function(){
                         var scrolled = false; 
-                        if($('body').width() > 620 ){
+                        if($('body').width() > 737 ){
                         if($(this).scrollTop() > 1){ 
                             // firstAnimation();
                             
 
                              $('div').removeClass('destroy');
+
                              $('header').removeClass('destroy');
                               $('body').addClass("woah");
                              $('.prettywrapper').addClass("woah");
+                             $('.prettymusic').addClass("woah");
                  
                              $('#wrapper').addClass("woah");
                              $('div').removeAttr('destroy');
@@ -111,6 +113,8 @@
                             // if(scrolled == true){ 
                             $('div').addClass('destroy');
                             $('.prettywrapper').removeClass('woah');
+                            $('.prettymusic').removeClass('woah');
+
 
                             $('header').addClass('destroy');
                              $('#wrapper').addClass('destroy');
@@ -124,6 +128,10 @@
                             // $('destroy').removeClass('panel');
                         }
                     } 
+                    else { 
+                        $('.prettywrapper').addClass("woah");
+
+                    }
                      });
                 });
                 var firstAnimation = function () {
