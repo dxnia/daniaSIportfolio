@@ -36,10 +36,16 @@
                         {% else %}
                              <a href="index.html" class="icon fa-home"><span>Home</span></a>
                         {% endif %}
+
                         {% if current_path == '/work.html' %}
                         <a href="work.html" class="icon fa-folder" id="lightup"><span>Work</span></a>
                         {% else %}
                              <a href="work.html" class="icon fa-folder"><span>Work</span></a>
+                        {% endif %}
+                        {% if current_path == '/music.html' %}
+                            <a href="music.html" class="icon fa-music" id="lightup"><span>Music</span></a>
+                        {% else %}
+                             <a href="music.html" class="icon fa-music"><span>Music</span></a>
                         {% endif %}
                         {% if current_path == '/contact.html' %}
                         <a href="contact.html" class="icon fa-envelope" id="lightup"><span>Contact</span></a>
@@ -88,9 +94,12 @@
                             
 
                              $('div').removeClass('destroy');
+                             $('header').removeClass('destroy');
                               $('body').addClass("woah");
+                             $('.prettywrapper').addClass("woah");
+                 
                              $('#wrapper').addClass("woah");
-                             
+                             $('div').removeAttr('destroy');
                              $('article').removeAttr('#destroy');
                              scrolled = true; 
                              // $('#title').addClass('disappear');
@@ -101,6 +110,9 @@
                         else { 
                             // if(scrolled == true){ 
                             $('div').addClass('destroy');
+                            $('.prettywrapper').removeClass('woah');
+
+                            $('header').addClass('destroy');
                              $('#wrapper').addClass('destroy');
                              $('body').removeClass("woah");
                              $('article').attr('#destroy');
@@ -153,6 +165,8 @@
                 });
 
             </script>
+            <script src="static/js/spotify-web-api-js.js"></script>
+    
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 </body>

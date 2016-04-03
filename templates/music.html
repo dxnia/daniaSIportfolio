@@ -1,0 +1,90 @@
+{% extends "templates/base.html" %}
+{% block content %} 
+<!-- 
+  <nav  id="nav" class="woah">
+                        
+                        {% if current_path == '/index.html' %}
+                            <a href="index.html" class="icon fa-home" id="lightup"><span>Home</span></a>
+                        {% else %}
+                             <a href="index.html" class="icon fa-home"><span>Home</span></a>
+                        {% endif %}
+
+                        {% if current_path == '/work.html' %}
+                        <a href="work.html" class="icon fa-folder" id="lightup"><span>Work</span></a>
+                        {% else %}
+                             <a href="work.html" class="icon fa-folder"><span>Work</span></a>
+                        {% endif %}
+                        {% if current_path == '/music.html' %}
+                            <a href="music.html" class="icon fa-music" id="lightup"><span>Music</span></a>
+                        {% else %}
+                             <a href="music.html" class="icon fa-music"><span>Music</span></a>
+                        {% endif %}
+                        {% if current_path == '/contact.html' %}
+                        <a href="contact.html" class="icon fa-envelope" id="lightup"><span>Contact</span></a>
+                        {% else %}
+                             <a href="contact.html" class="icon fa-envelope"><span>Contact</span></a>
+                        {% endif %}
+
+                         <a href="other.html" class="icon fa-home "><span>Home</span></a>
+                        <a href="work.html" class="icon fa-folder"><span>Work</span></a>
+                        <a href="contact.html" class="icon fa-envelope"><span>Contact</span></a> -->
+                      <!--   <a id="clickin" href = "{{loginbutton}}">{{loginorout}}</a>
+                        <header> <h2>D A N I A / A B D U L H A M I D</h2></header><br>
+
+                        <footer> &copy;dania</footer> 
+    </nav> -->
+  <header  class="musicid" class="destroy" id="centerit" >
+      <h1> hello</h1> <h2>{{there}}</h2>
+  </header>
+  <div class="destroy" id = "centerit">
+
+    <h2>Type in a # number 0-19 to see which Elvis album you are!</h2><br>
+    <form id="search-form" method = "POST">
+        <input type="text" id="query" name="artistneeded" value="0" class="form-control" />
+        <input type="submit" id="search" class="btn btn-primary" value="Search"  onclick = "displayInformation();"/>
+    </form>
+    <div> <p id="results"></p></div>
+    <h1>Congratulations, you are...</h1><br>
+
+</div>
+
+<div class = "elvis"> 
+    <p id="demo"></p>
+  
+<div id="albumcover"></div>
+<div class = "byee"> <p class="text">“Our comforting conviction that the world makes sense rests on a secure foundation: our almost unlimited ability to ignore our ignorance.Our comforting conviction that the world makes sense rests on a secure foundation: our almost unlimited ability to ignore our ignorance</p></div>  
+</div>
+
+<script text="javascript"> 
+
+document.getElementById('search-form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          // searchAlbums(document.getElementById('query').value);
+          // console.log(searchAlbums(document.getElementById('query').value));
+          console.log("hhihi");
+        }, false);
+     function displayInformation () {
+            var spotifyApi = new SpotifyWebApi();
+            spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE', function(err, data) {
+            if (err) console.error(err);
+            else console.log('Artist albums', data);
+
+            // var obj = JSON.parse(data)
+            // document.getElementById("demo").innerHTML = data.items[1].name ; 
+
+            if( document.getElementById('query').value < 20) { 
+              document.getElementById("demo").innerHTML = data.items[document.getElementById('query').value].name ;
+              document.getElementById("albumcover").innerHTML = "<img src=\"" + data.items[document.getElementById('query').value].images[0].url +"\">";
+            } 
+            else { 
+              document.getElementById("demo").innerHTML = data.items[0].name
+            }
+            
+          });
+}
+// </script> 
+
+
+  </body> 
+
+{%endblock%}

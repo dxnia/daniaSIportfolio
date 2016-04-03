@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Astral by HTML5 UP</title>
+        <meta charset="utf-8" />
+=
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+        <link rel="stylesheet" href="static/main.css" />
+       
+        <noscript><link rel="stylesheet" href="static/css/noscript.css" /></noscript>
+ <link rel="stylesheet" href="static/imadethis.css" />
+ <link href='https://fonts.googleapis.com/css?family=Aguafina+Script' rel='stylesheet' type='text/css'>
+        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        
+        <!-- `<header > <h1 class="beforescroll" > D A N I A A B D U L H A M I D<h1></header> -->
+       
+    </head>
+    <body>
+
+
+<div class="container">
+    <h1>Search for an Artist</h1>
+    <form id="search-form">
+        <input type="text" id="query" value="" class="form-control" />
+        <input type="submit" id="search" class="btn btn-primary" value="Search" />
+    </form>
+    <div id="results"></div>
+</div>
+<script id="results-template" type="text/x-handlebars-template">
+    {{#each albums.items}}
+    <div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+    {{/each}}
+</script>
+
+
+</body>
+</html>
